@@ -1,0 +1,17 @@
+.action-on-task {
+	align-self: center;
+	cursor: pointer;
+}
+
+.tasks-register {
+	border-color: black;
+}
+
+td {
+	text-align: center;
+}
+
+thead {
+	background-color: #222;
+	color: #fafafa;
+}
