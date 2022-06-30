@@ -1,5 +1,9 @@
 # Task manager API
 
+## Version de Python3 utilizada
+Python 3.10.2
+
+
 ## Tests
 Para correr los tests
 ```python
