@@ -7,13 +7,19 @@ from tasks_app.models import Task
 logger = logging.getLogger(__name__)
 
 
+"""
+    En cada respuesta HTTP se tiene los siguientes casos:
+        En caso de ocurra un error se devuelve un status FAIL + un mensaje muy elemental del error
+        En caso de que la creacion fue correcta, SUCCESS
+"""
+
+
 def index(request) -> HttpResponse:
     """
         HTTP GET para renderizar el template de home
     """
     logger.info('Se accedio al index de "tasks_app"')
     return render(request, 'index.html')
-
 
 
 def tasks_actions(request):
@@ -29,7 +35,7 @@ def tasks_actions(request):
     elif request.method == "DELETE":
         return delete_task(request)
     else:
-        method_not_allowed_error()
+        return method_not_allowed_error()
 
 
 def get_tasks(request) -> JsonResponse or HttpResponse:
@@ -54,8 +60,6 @@ def create_task(request) -> JsonResponse or HttpResponse:
             "publish_date" : "25-04-1999",
             "content" : "Hacer la cama a las 20hs"
         }
-        En caso de ocurra un error se devuelve un status FAIL
-        En caso de que la creacion fue correcta, SUCCESS
     """
     json_task = ast.literal_eval(request.body.decode('utf-8')) 
     logger.info(f'Recibi estos datos para la creacion de una nueva tarea: {json_task}')
@@ -125,9 +129,10 @@ def complete_task(request) -> JsonResponse or HttpResponse:
         "taskUpdateStatus" : "SUCCESS"
     })
 
+
 def method_not_allowed_error() -> None:
     """
         Error generico para verbo HTTP no aceptado
     """
     logger.error('¡Se trato de enviar un verbo HTTP no valido!')
-    HttpResponse('<h1>Method not allowed!</h1>')
+    return HttpResponse('<h1>Method not allowed!</h1>')
