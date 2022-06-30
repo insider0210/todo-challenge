@@ -15,7 +15,7 @@ para el challenge se decidio seguirlo asi
 Mas info para otras cuestiones en : https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 Luego de bajarse el proyecto se deben realizar los siguientes pasos
-- Para migrar el modelo del modulo models.py
+- Para migrar el modelo del modulo `models.py`
     - Moverse a la carpeta donde este `manage.py` y ejecutar:
 
         ```python
@@ -36,18 +36,18 @@ Luego de bajarse el proyecto se deben realizar los siguientes pasos
 Para validar que se levanto ok el servidor, probar accediendo a `http://127.0.0.1:8080/`
 
 ## UI diseñada
-Decidi usar un front para probar mas facil la API y ademas para poder hacer la demo mas sencilla
+- Decidi usar un front para probar mas facil la API y ademas para poder hacer la demo mas sencilla
 
-El front solo consiste en JS,CSS Y HTML
+- El front solo consiste en JS,CSS Y HTML
 
-Para acceder a pagina principal, ir a `http://127.0.0.1:8080/tasks_app/`
+- Para acceder a pagina principal, ir a `http://127.0.0.1:8080/tasks_app/`
 
 ### Crear tareas
-Para crear una tarea, de forma `obligatoria`, llenar los campos de "CONTENIDO" y "FECHA".
+- Para crear una tarea, de forma `obligatoria`, llenar los campos de "CONTENIDO" y "FECHA".
 
-Luego seleccionar "Crear tarea"
+- Luego seleccionar "Crear tarea"
 
-Revisar que se confirmo la creacion de la tarea (tanto del lado del cliente como del servidor)
+- Revisar que se confirmo la creacion de la tarea (tanto del lado del cliente como del servidor)
 
 ### Filtrar/buscar/mostrar tareas
 - Para buscar/filtrar tareas simplemente completar los campos necesarios (2 inputs)
